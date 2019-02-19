@@ -8,7 +8,7 @@
     <style>
         .portable-github-form{
             position:fixed;
-            bottom:0;
+            bottom:0px;
             right:0;
             z-index:999;
             width:320px;
@@ -18,6 +18,22 @@
             box-shadow: 2px 4px 56px -6px rgba(0,0,0,0.27);
             font-family: sans-serif;
             font-size: 1rem;
+        }
+        .portable-github-form-trigger{
+            position:absolute;
+            text-transform: uppercase;
+            top:-20px;
+            left:0;
+            text-align:center;
+            font-size:.9rem;
+            font-weight:lighter;
+            background:white;
+            width:150px;
+            height:25px;
+            border-radius:10px;
+            padding:5px 5px 0 5px;
+            display: block;
+            cursor:pointer;
         }
         .portable-github-form fieldset{
             border:1px solid #DDD;
@@ -42,6 +58,7 @@
             display:block;
             width:100%;
             font-size: .8rem;
+            padding:5px;
         } 
         .portable-github-form textarea{
             min-height:6rem;
@@ -73,7 +90,7 @@
 <body>
     <h1>A sample page</h1>
     <p>You should see a form that invites the user to post any problem/ feedback to a Given repository Issues.</p>
-    
-    <script src="bundle.js" ></script>
+    <script src="bundle.js"></script>
+
 </body>
 </html>
