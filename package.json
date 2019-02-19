@@ -1,0 +1,30 @@
+{
+  "name": "portable-github-issues-form",
+  "version": "1.0.0",
+  "description": "Easily integrate a form that posts Issues to a given repository",
+  "main": "portable-github-issues-form.js",
+  "dependencies": {
+    "github-create-issue": "^2.0.0"
+  },
+  "devDependencies": {
+    "browserify": "^16.2.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pixeline/portable-github-issues-form.git"
+  },
+  "keywords": [
+    "git",
+    "issues",
+    "form"
+  ],
+  "author": "Alexandre Plennevaux",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pixeline/portable-github-issues-form/issues"
+  },
+  "homepage": "https://github.com/pixeline/portable-github-issues-form#readme"
+}
