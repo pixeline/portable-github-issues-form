@@ -7,7 +7,8 @@
     "github-create-issue": "^2.0.0"
   },
   "devDependencies": {
-    "browserify": "^16.2.3"
+    "browserify": "^16.2.3",
+    "watchify": "^3.11.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

@@ -5,10 +5,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>TEST</title>
+    <style>
+        .portable-github-form{
+            position:fixed;
+            bottom:0;
+            right:0;
+            z-index:999;
+            width:320px;
+            max-width:80%;
+            padding:1.5rem;
+            margin:2rem;
+            box-shadow: 2px 4px 56px -6px rgba(0,0,0,0.27);
+            font-family: sans-serif;
+            font-size: 1rem;
+        }
+        .portable-github-form fieldset{
+            border:1px solid #DDD;
+            padding:2rem;
+        }
+        .portable-github-form legend{
+            background:white;
+            padding-right:1rem;
+
+            display:block;
+            margin-left:0;
+        }
+        .portable-github-form div{
+            margin:0 auto 1rem;
+        }
+        .portable-github-form label{
+            font-weight:bold;
+        }
+        .portable-github-form label,
+            .portable-github-form input,
+        .portable-github-form textarea{
+            display:block;
+            width:100%;
+            font-size: .8rem;
+        } 
+        .portable-github-form textarea{
+            min-height:6rem;
+        }
+        .portable-github-form input.github-issues-form-send{
+            margin-top:1rem;
+            font-size: 1.5rem;
+            width:auto;
+            margin:auto;
+        }
+        .github-issue-form-close:after{
+            float:right;
+            display: block;
+            cursor:pointer;
+            content: "\00d7"; /* This will render the 'X' */
+            color:#999;
+            margin-top:-1.5rem;
+            margin-right:-1rem;
+            line-height:30px;
+            width:30px;
+            height:30px;
+            text-align:center;
+          }
+          .github-issue-form-close:hover:after{
+              color: #111;
+          }
+    </style>
 </head>
 <body>
     <h1>A sample page</h1>
-    <p>You should see a Call to Action that invites the user to post any problem/ feedback to a Given repository Issues.</p>
+    <p>You should see a form that invites the user to post any problem/ feedback to a Given repository Issues.</p>
     
     <script src="bundle.js" ></script>
 </body>
