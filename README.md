@@ -43,3 +43,4 @@ then
 
 ## Credits 
 - post issue to github function : https://github.com/kgryte/github-create-issue
+- GitHub API documentation: https://developer.github.com/v3/issues/#create-an-issue
