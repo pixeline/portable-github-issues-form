@@ -7,7 +7,7 @@ window.GithubIssueForm = function (options) {
     this.milestone = options.milestone || null; // Number
     this.DOMElement = null;
     var issue = this;
-    if (!issue.token || !issue.repository) {
+    if (!issue.token) {
         throw new Error('Error : Missing authentification token.');
     }
     if (!issue.repository) {
