@@ -56,8 +56,13 @@ function GithubIssueForm(options) {
         document.querySelector('body').insertAdjacentHTML("beforeend", this.form);
         var wrapper = document.getElementById('js-github-issues-form');
         // Autohide
+        var offset = this.offset(wrapper);
+        console.log(offset);
+        var top = offset.top;
         var height = wrapper.offsetHeight;
-        // wrapper.style.bottom = (- height - 25) + 'px';
+        var hidePos = 
+        //wrapper.style.bottom = (- height - 25) + 'px';
+        wrapper.style.top = top + wrapper.offsetHeight;
         wrapper.setAttribute('data-height', height);
         wrapper.setAttribute('data-state', 'hidden');
         console.info('height: ' + wrapper.style.bottom);
@@ -76,9 +81,8 @@ function GithubIssueForm(options) {
             if (wrapper.getAttribute('data-state') === 'hidden') {
                 // show the form
                 wrapper.setAttribute('data-state', 'visible');
-                var newVerticalPosition = wrapper.off + wrapper.offsetHeight;
-                console.log(newVerticalPosition);
-                moveVertically(wrapper, newVerticalPosition);
+                var newVerticalPosition = wrapper.offsetHeight;
+                moveVertically(wrapper, 0);
             } else {
                 // hide the form 
                 wrapper.setAttribute('data-state', 'hidden');
@@ -87,6 +91,13 @@ function GithubIssueForm(options) {
         });
     }
 
+    this.offset = function (el) {
+        var rect = el.getBoundingClientRect(), bodyElt = document.body;
+        return {
+            top: rect.top + bodyElt.scrollTop,
+            left: rect.left + bodyElt.scrollLeft
+        }
+    }
     function moveVertically(elem, destination) {
         var position = elem.style.bottom;
         var id = setInterval(frame, 3);
@@ -99,6 +110,7 @@ function GithubIssueForm(options) {
             }
         }
     }
+
 };
 
 var githubForm = new GithubIssueForm({ 'token': '67b0d83e414a2fcf81c5ffa33fa0faf0c2713cce', 'useragent': 'portable-github-issues-form', 'repository': 'pixeline/portable-github-issues-form', 'milestone': null }).inject();
