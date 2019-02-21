@@ -1,12 +1,10 @@
 window.GithubIssueForm = function (options) {
-    this.token = options.token || '1b508508fcf3c7ec30dfa3aba9697bc51c3896fd';
+    this.token = options.token;
+    this.repository = options.repository;
     this.useragent = options.useragent || 'portable-github-issues-form';
-    this.repository = options.repository || 'pixeline/portable-github-issues-form';
     this.assignee = options.assignee || []; //GitHub usernames of assigned users.
-    this.labels = options.labels || ['bug', 'funny'];
+    this.labels = options.labels || ['bug'];
     this.milestone = options.milestone || null; // Number
-    this.title = options.title || 'Found a bug ?';
-
     this.DOMElement = null;
     var issue = this;
     if (!issue.token || !issue.repository) {

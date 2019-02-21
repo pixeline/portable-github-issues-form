@@ -1,18 +1,17 @@
-# portable-github-issues-form
+# Portable GitHub Issues Form
 
 Easily add a beautiful Bug Report form on your website/application, that is sent to a GitHub repository Issues.
 3 lines of code and you are done.
 
-## how to use 
+## How to use 
 
-Add the provided javascript file right before the end body tag: 
-
-`<script src="bundle.js" ></script>`
-Then instantiate the Issue object, using your project's repository credential :
+Add the provided javascript file right before the end body tag, then instantiate the Issue object, using your project's repository credentials :
 
 ``` javascript
+<script src="https://cdn.jsdelivr.net/gh/pixeline/portable-github-issues-form/bundle.js" ></script>
 <script>
-Issue = new Issue({ 'token': '1b508508fcf3c7ec30dfa3aba9697bc51c3896fd', 'useragent': 'portable-github-issues-form', 'repository': 'pixeline/portable-github-issues-form' });
+var githubForm =  new GithubIssueForm({ 'token': 'xxx', 'useragent': 'portable-github-issues-form', 'repository': 'pixeline/portable-github-issues-form', 'milestone': null });
+githubForm.inject();
 Issue.inject();
 </script>
 ```
@@ -28,7 +27,7 @@ The `function` accepts the following `options`:
 *   __labels__: `array` of associated labels.
 
 
-To [authenticate][github-oauth2] with GitHub, set the [`token`][github-token] option.
+To authenticate with GitHub, set the token option.
 
 ``` javascript
 var opts = {
@@ -42,7 +41,7 @@ var opts = {
 
 then
 
-`watchify portable-github-issues-form.js -o bundle.js` 
+`watchify ./src/portable-github-issues-form.js -o bundle.js` 
 
 ## Credits 
 - post issue to github function : https://github.com/kgryte/github-create-issue
