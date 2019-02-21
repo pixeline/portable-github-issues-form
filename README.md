@@ -3,6 +3,10 @@
 Easily add a beautiful Bug Report form on your website/application, that is sent to a GitHub repository Issues.
 3 lines of code and you are done.
 
+[Demo](http://pixeline.tk/portable-github-issues-form/)
+
+![](./docs/demo.gif)
+
 ## How to use 
 
 Add the provided javascript file right before the end body tag, then instantiate the Issue object, using your project's repository credentials :
