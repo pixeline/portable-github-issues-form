@@ -1,124 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>TEST</title>
-    <style>
-        .portable-github-form{
-            position:fixed;
-            bottom:0px;
-            right:0;
-            z-index:999;
-            width:320px;
-            max-width:80%;
-            padding:1.5rem;
-            margin:2rem;
-            background:white;
-            box-shadow: 2px 4px 56px -6px rgba(0,0,0,0.27);
-            font-family: sans-serif;
-            font-size: 1rem;
-        }
-        .portable-github-form-trigger{
-            position:absolute;
-            text-transform: uppercase;
-            top:-20px;
-            left:0;
-            text-align:center;
-            font-size:.9rem;
-            font-weight:lighter;
-            background:white;
-            width:150px;
-            height:25px;
-            border-radius:10px;
-            padding:5px 5px 0 5px;
-            display: block;
-            cursor:pointer;
-        }
-        .portable-github-form fieldset{
-            border:1px solid #DDD;
-            padding:2rem;
-        }
-        .portable-github-form legend{
-            background:white;
-            padding-right:1rem;
-
-            display:block;
-            margin-left:0;
-        }
-        .portable-github-form div{
-            margin:0 auto 1rem;
-        }
-        .portable-github-form label{
-            font-weight:bold;
-        }
-        .portable-github-form label,
-            .portable-github-form input,
-        .portable-github-form textarea{
-            display:block;
-            width:100%;
-            font-size: .8rem;
-            padding:5px;
-        } 
-        .portable-github-form textarea{
-            min-height:6rem;
-        }
-        .portable-github-form input.github-issues-form-send{
-            margin-top:1rem;
-            font-size: 1.5rem;
-            width:auto;
-            margin:auto;
-        }
-        .github-issue-form-close:after{
-            float:right;
-            display: block;
-            cursor:pointer;
-            content: "\00d7"; /* This will render the 'X' */
-            color:#999;
-            margin-top:-1.5rem;
-            margin-right:-1rem;
-            line-height:30px;
-            width:30px;
-            height:30px;
-            text-align:center;
-          }
-          .github-issue-form-close:hover:after{
-              color: #111;
-          }
-          .js-reveal{
-            animation: expand 5s;
-          }
-          @-webkit-keyframes expand{
-            0%{height:0px}
-            100%{height:1000px}
-        }
-    </style>
 </head>
-<body>
-    <h1>A sample page</h1>
-    <p>You should see a form that invites the user to post any problem/ feedback to a Given repository Issues.</p>
-    <p>    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis delectus porro placeat ipsum velit laudantium quo, nulla dolore pariatur facere. Iste beatae a rem repellat? Optio reprehenderit iure dolore provident.
-    </p>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis delectus porro placeat ipsum velit laudantium quo, nulla dolore pariatur facere. Iste beatae a rem repellat? Optio reprehenderit iure dolore provident.
-        </p>  <p>    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis delectus porro placeat ipsum velit laudantium quo, nulla dolore pariatur facere. Iste beatae a rem repellat? Optio reprehenderit iure dolore provident.
-            </p>  <p>    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis delectus porro placeat ipsum velit laudantium quo, nulla dolore pariatur facere. Iste beatae a rem repellat? Optio reprehenderit iure dolore provident.
-                </p>  <p>    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis delectus porro placeat ipsum velit laudantium quo, nulla dolore pariatur facere. Iste beatae a rem repellat? Optio reprehenderit iure dolore provident.
-                    </p>  <p>    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis delectus porro placeat ipsum velit laudantium quo, nulla dolore pariatur facere. Iste beatae a rem repellat? Optio reprehenderit iure dolore provident.
-                        </p>  <p>    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis delectus porro placeat ipsum velit laudantium quo, nulla dolore pariatur facere. Iste beatae a rem repellat? Optio reprehenderit iure dolore provident.
-                            </p>  <p>    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis delectus porro placeat ipsum velit laudantium quo, nulla dolore pariatur facere. Iste beatae a rem repellat? Optio reprehenderit iure dolore provident.
-                                </p>  <p>    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis delectus porro placeat ipsum velit laudantium quo, nulla dolore pariatur facere. Iste beatae a rem repellat? Optio reprehenderit iure dolore provident.
-                                    </p>  <p>    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis delectus porro placeat ipsum velit laudantium quo, nulla dolore pariatur facere. Iste beatae a rem repellat? Optio reprehenderit iure dolore provident.
-                                        </p>  <p>    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis delectus porro placeat ipsum velit laudantium quo, nulla dolore pariatur facere. Iste beatae a rem repellat? Optio reprehenderit iure dolore provident.
-                                            </p>  <p>    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis delectus porro placeat ipsum velit laudantium quo, nulla dolore pariatur facere. Iste beatae a rem repellat? Optio reprehenderit iure dolore provident.
-                                                </p>  <p>    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis delectus porro placeat ipsum velit laudantium quo, nulla dolore pariatur facere. Iste beatae a rem repellat? Optio reprehenderit iure dolore provident.
-                                                    </p>  <p>    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis delectus porro placeat ipsum velit laudantium quo, nulla dolore pariatur facere. Iste beatae a rem repellat? Optio reprehenderit iure dolore provident.
-                                                        </p>  <p>    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis delectus porro placeat ipsum velit laudantium quo, nulla dolore pariatur facere. Iste beatae a rem repellat? Optio reprehenderit iure dolore provident.
-                                                            </p>  <p>    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis delectus porro placeat ipsum velit laudantium quo, nulla dolore pariatur facere. Iste beatae a rem repellat? Optio reprehenderit iure dolore provident.
-                                                                </p>  <p>    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis delectus porro placeat ipsum velit laudantium quo, nulla dolore pariatur facere. Iste beatae a rem repellat? Optio reprehenderit iure dolore provident.
-                                                                    </p>  
-<script src="bundle.js"></script>
-    
 
+<body>
+    <div>
+        <h1>A sample page</h1>
+        <p>You should see a form that invites the user to post any problem/ feedback to a Given repository Issues.</p>
+        <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis delectus porro placeat ipsum velit laudantium
+            quo,
+            nulla dolore pariatur facere. Iste beatae a rem repellat? Optio reprehenderit iure dolore provident.
+        </p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis delectus porro placeat ipsum velit laudantium
+            quo,
+            nulla dolore pariatur facere. Iste beatae a rem repellat? Optio reprehenderit iure dolore provident.
+        </p>
+        <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis delectus porro placeat ipsum velit laudantium
+            quo,
+            nulla dolore pariatur facere. Iste beatae a rem repellat? Optio reprehenderit iure dolore provident.
+        </p>
+        <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis delectus porro placeat ipsum velit laudantium
+            quo,
+            nulla dolore pariatur facere. Iste beatae a rem repellat? Optio reprehenderit iure dolore provident.
+        </p>
+        <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis delectus porro placeat ipsum velit laudantium
+            quo,
+            nulla dolore pariatur facere. Iste beatae a rem repellat? Optio reprehenderit iure dolore provident.
+        </p>
+        <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis delectus porro placeat ipsum velit laudantium
+            quo,
+            nulla dolore pariatur facere. Iste beatae a rem repellat? Optio reprehenderit iure dolore provident.
+        </p>
+        <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis delectus porro placeat ipsum velit laudantium
+            quo,
+            nulla dolore pariatur facere. Iste beatae a rem repellat? Optio reprehenderit iure dolore provident.
+        </p>
+        <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis delectus porro placeat ipsum velit laudantium
+            quo,
+            nulla dolore pariatur facere. Iste beatae a rem repellat? Optio reprehenderit iure dolore provident.
+        </p>
+        <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis delectus porro placeat ipsum velit laudantium
+            quo,
+            nulla dolore pariatur facere. Iste beatae a rem repellat? Optio reprehenderit iure dolore provident.
+        </p>
+        <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis delectus porro placeat ipsum velit laudantium
+            quo,
+            nulla dolore pariatur facere. Iste beatae a rem repellat? Optio reprehenderit iure dolore provident.
+        </p>
+        <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis delectus porro placeat ipsum velit laudantium
+            quo,
+            nulla dolore pariatur facere. Iste beatae a rem repellat? Optio reprehenderit iure dolore provident.
+        </p>
+        <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis delectus porro placeat ipsum velit laudantium
+            quo,
+            nulla dolore pariatur facere. Iste beatae a rem repellat? Optio reprehenderit iure dolore provident.
+        </p>
+        <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis delectus porro placeat ipsum velit laudantium
+            quo,
+            nulla dolore pariatur facere. Iste beatae a rem repellat? Optio reprehenderit iure dolore provident.
+        </p>
+        <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis delectus porro placeat ipsum velit laudantium
+            quo,
+            nulla dolore pariatur facere. Iste beatae a rem repellat? Optio reprehenderit iure dolore provident.
+        </p>
+        <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis delectus porro placeat ipsum velit laudantium
+            quo,
+            nulla dolore pariatur facere. Iste beatae a rem repellat? Optio reprehenderit iure dolore provident.
+        </p>
+        <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis delectus porro placeat ipsum velit laudantium
+            quo,
+            nulla dolore pariatur facere. Iste beatae a rem repellat? Optio reprehenderit iure dolore provident.
+        </p>
+        <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis delectus porro placeat ipsum velit laudantium
+            quo,
+            nulla dolore pariatur facere. Iste beatae a rem repellat? Optio reprehenderit iure dolore provident.
+        </p>
+    </div>
+
+    <script src="bundle.js"></script>
+
+    <script>
+
+var githubForm =  GithubIssueForm({ 'token': '67b0d83e414a2fcf81c5ffa33fa0faf0c2713cce', 'useragent': 'portable-github-issues-form', 'repository': 'pixeline/portable-github-issues-form', 'milestone': null });
+githubForm.inject();
+    </script>
 </body>
+
 </html>
