@@ -31,7 +31,8 @@ The `function` accepts the following `options`:
 *   __labels__: `array` of associated labels.
 
 
-To authenticate with GitHub, set the token option.
+To authenticate with GitHub, set the token option. You can [obtain a token here](https://github.com/settings/tokens).  Only enable "public_repo" access for public repositories, "repo" for private.
+
 
 ``` javascript
 var opts = {

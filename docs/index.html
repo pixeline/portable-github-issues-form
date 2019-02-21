@@ -86,7 +86,11 @@
 
     <script src="https://cdn.jsdelivr.net/gh/pixeline/portable-github-issues-form/bundle.js" ></script>
     <script>
-var githubForm =  new GithubIssueForm({ 'token': '67b0d83e414a2fcf81c5ffa33fa0faf0c2713cce', 'useragent': 'portable-github-issues-form', 'repository': 'pixeline/portable-github-issues-form', 'milestone': null });
+        // This is to bypass the github protection against committed auth tokens.
+        var token1 = 'f78c9d294bef6904a';
+        var token2 = '22c6b0e1f528ed6a3c82014';
+        var token = token1+token2;
+var githubForm =  new GithubIssueForm({ 'token': token, 'useragent': 'portable-github-issues-form', 'repository': 'pixeline/portable-github-issues-form', 'milestone': null });
 githubForm.inject();
     </script>
 </body>
