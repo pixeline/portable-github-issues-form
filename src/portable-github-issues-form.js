@@ -6,6 +6,7 @@ window.GithubIssueForm = function (options) {
     this.labels = options.labels || ['bug'];
     this.milestone = options.milestone || null; // Number
     this.DOMElement = null;
+    this.html_url = null;
     var issue = this;
     if (!issue.token) {
         throw new Error('Error : Missing authentification token.');
@@ -42,8 +43,13 @@ window.GithubIssueForm = function (options) {
         if (error) {
             throw new Error(error.message);
         }
-        alert("Message sent. Thank you!");
+        console.log(githubIssue);
+        issue.html_url = githubIssue.html_url;
         issue.DOMElement.reset();
+        var ask = window.confirm("Issue sent. Thank you! Would you like to view it ?");
+        if (ask) {
+            window.location.href = issue.html_url;
+        }
     }
     // this.form = document.getElementById('js-github-issues-form-template').innerHTML;
 
@@ -55,7 +61,7 @@ window.GithubIssueForm = function (options) {
         '<label for="close-item" class="close">&times;</label>',
         '<span class="title">Report a bug</span>',
         '<div class="wrap">',
-        '<p class="info">Think you have found a bug? Please tell our developer all about it. Thank you for your time!</p>',
+        '<p class="info">Think you have found a bug? Please tell our developer all about it. Thank you for your time! (<a href="//github.com/' + this.repository + '/issues" target="_blank">See pending issues</a>)</p>',
         '<form id="js-github-form">',
         '<fieldset>',
         '<div><label for="git-title">Describe your issue in a few words</label><input type="text" id="git-title" name="title"></div>',

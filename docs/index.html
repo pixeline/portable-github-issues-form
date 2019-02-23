@@ -83,15 +83,16 @@
             nulla dolore pariatur facere. Iste beatae a rem repellat? Optio reprehenderit iure dolore provident.
         </p>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/gh/pixeline/portable-github-issues-form/bundle.js" ></script>
+<script src="../bundle.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/gh/pixeline/portable-github-issues-form/bundle.js" ></script> -->
     <script>
         // This is to bypass the github protection against committed auth tokens.
         var token1 = 'f78c9d294bef6904a';
         var token2 = '22c6b0e1f528ed6a3c82014';
         var token = token1+token2;
-var githubForm =  new GithubIssueForm({ 'token': token, 'useragent': 'portable-github-issues-form', 'repository': 'pixeline/portable-github-issues-form', 'milestone': null });
-githubForm.inject();
+        var token = '099ba001d27f0b0224b34089cf45028f3467061e';
+var Issue =  new GithubIssueForm({ 'token': token, 'useragent': 'portable-github-issues-form', 'repository': 'pixeline/portable-github-issues-form', 'milestone': null });
+Issue.inject();
     </script>
 </body>
 
