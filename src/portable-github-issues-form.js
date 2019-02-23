@@ -2,7 +2,7 @@ window.GithubIssueForm = function (options) {
     this.token = options.token;
     this.repository = options.repository;
     this.useragent = options.useragent || 'portable-github-issues-form';
-    this.assignee = options.assignee || []; //GitHub usernames of assigned users.
+    this.assignee = options.assignee || null; //GitHub usernames of assigned users.
     this.labels = options.labels || ['bug'];
     this.milestone = options.milestone || null; // Number
     this.DOMElement = null;
@@ -15,43 +15,50 @@ window.GithubIssueForm = function (options) {
         throw new Error('Missing repository.');
     }
     function send(title, content) {
-        var createGithubIssue = require('github-create-issue');
         // Basic validation:
         if (!title || !content) {
             var feedback = 'Error: please answer all questions before submitting your issue.';
             alert(feedback);
             throw new Error(feedback);
         }
-        // Actually post the Issue:
-        createGithubIssue(issue.repository, title, {
-            'token': issue.token,
-            'useragent': issue.useragent,
-            'body': content,
-            'assignee': issue.assignee,
-            'labels': issue.labels,
-            //          'milestone': issue.milestone
-        }, githubCallback);
-    }
+        var endPoint = 'https://api.github.com/repos/' + issue.repository + '/issues';
+        var xhr = new XMLHttpRequest();
+        xhr.onload = function () {
+            // Process our return data
+            if (xhr.status >= 200 && xhr.status < 300) {
+                // Successful request
+                var response = JSON.parse(xhr.response);
+                console.info(response.html_url, 'redirect url 2');
+                issue.html_url = response.html_url;
+                issue.DOMElement.reset();
+                var ask = window.confirm("Issue sent. Thank you! Would you like to view it ?");
+                if (ask) {
+                    window.location.href = response.html_url;
+                }
+            } else {
+                console.error('The request failed!');
+            }
+        };
+        // Create and send the POST request
+        xhr.open('POST', endPoint, true);
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.setRequestHeader("Authorization", "token " + issue.token);
 
-    function githubCallback(error, githubIssue, info) {
-        // Check for rate limit information...
-        if (info) {
-            console.error('Limit: %d', info.limit);
-            console.error('Remaining: %d', info.remaining);
-            console.error('Reset: %s', (new Date(info.reset * 1000)).toISOString());
+        var data = {
+            'title': title,
+            'body': content,
+            'useragent': issue.useragent,
+            'labels': issue.labels
         }
-        if (error) {
-            throw new Error(error.message);
+        if ('' !== issue.assignee) {
+            data.assignee = issue.assignee;
         }
-        console.log(githubIssue);
-        issue.html_url = githubIssue.html_url;
-        issue.DOMElement.reset();
-        var ask = window.confirm("Issue sent. Thank you! Would you like to view it ?");
-        if (ask) {
-            window.location.href = issue.html_url;
+        if ('' !== issue.milestone) {
+            data.milestone = issue.milestone;
         }
-    }
-    // this.form = document.getElementById('js-github-issues-form-template').innerHTML;
+        console.info(data, 'data sent:');
+        xhr.send(JSON.stringify(data));
+    };
 
     this.form = ['<div id="js-github-issues-form" class="portable-github-form">',
         '<input id="open-item" name="js-githubform-trigger" type="radio" />',
